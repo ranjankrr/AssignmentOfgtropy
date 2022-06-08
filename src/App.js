@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import DataList from './DataList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App =()=>{
+  const [search, setSearch] = useState("");
+  const searchBox = (e)=>{
+     setSearch(e.target.value);
 }
-
+console.log(search);
+  return(
+    <>
+      <input type="search" placeholder='Search first letter your name' onChange={searchBox} value={search}/>
+      <table border="1">
+           <thead>
+                 <tr>
+                     <th>ID</th>
+                     <th>Name</th>
+                     <th>Age</th>
+                     <th>Email</th>
+                     <th>Mobile</th>
+                     <th>Address</th>
+                 </tr>
+           </thead>
+           <tbody>
+               {
+                 DataList.filter((items)=>items.name.charAt(0).toLowerCase().includes(search)).map((items)=>{
+                 return(
+                      <tr key={items.id}>
+                         <td>{items.id}</td>
+                         <td>{items.name}</td>
+                         <td>{items.age}</td>
+                         <td>{items.email}</td>
+                         <td>{items.mobile}</td>
+                         <td>{items.address}</td>
+                      </tr>
+                    
+               )})
+               }   
+           </tbody>
+      </table>
+     
+    </>
+  )
+}
 export default App;
