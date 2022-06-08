@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AssignmentOfgtropy/static/css/main.ff52d534.css",
+    "main.js": "/AssignmentOfgtropy/static/js/main.adf6e031.js",
+    "index.html": "/AssignmentOfgtropy/index.html",
+    "main.ff52d534.css.map": "/AssignmentOfgtropy/static/css/main.ff52d534.css.map",
+    "main.adf6e031.js.map": "/AssignmentOfgtropy/static/js/main.adf6e031.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff52d534.css",
+    "static/js/main.adf6e031.js"
+  ]
+}
